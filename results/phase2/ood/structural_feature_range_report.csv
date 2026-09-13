@@ -1,0 +1,4 @@
+feature,train_min,train_max,test_ood_min,test_ood_max,fraction_test_ood_out_of_train_range
+num_nodes,51,497,515,997,1.0
+depth,2,184,3,358,0.1
+max_width,2,236,4,338,0.1

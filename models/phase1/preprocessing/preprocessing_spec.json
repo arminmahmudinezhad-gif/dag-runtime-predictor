@@ -1,0 +1,189 @@
+{
+  "version": "phase1_preprocessing_v1",
+  "fit_split": "train",
+  "feature_contract": {
+    "node_features": [
+      "compute_cycles",
+      "memory_bytes",
+      "input_size_bytes",
+      "in_degree",
+      "out_degree",
+      "operation_type",
+      "criticality",
+      "topo_level",
+      "reverse_topo_level"
+    ],
+    "edge_features": [
+      "data_bytes"
+    ],
+    "context_features": [
+      "core_type",
+      "frequency_ghz",
+      "voltage_v",
+      "cpu_utilization",
+      "ready_queue_length",
+      "active_core_count",
+      "memory_active_tasks",
+      "bus_utilization",
+      "thermal_pressure",
+      "release_jitter_us"
+    ],
+    "target": "y_exec_us"
+  },
+  "node": {
+    "log1p_standardized": {
+      "compute_cycles": {
+        "transform": "log1p_standardize",
+        "mean": 18.11764270833026,
+        "std": 0.43325032204936104
+      },
+      "memory_bytes": {
+        "transform": "log1p_standardize",
+        "mean": 17.415656519559327,
+        "std": 0.6250240942528609
+      },
+      "input_size_bytes": {
+        "transform": "log1p_standardize",
+        "mean": 17.70147457849245,
+        "std": 6.376560216268997
+      }
+    },
+    "standardized": {
+      "in_degree": {
+        "transform": "standardize",
+        "mean": 7.037404842591228,
+        "std": 13.410031439144907
+      },
+      "out_degree": {
+        "transform": "standardize",
+        "mean": 7.037404842591228,
+        "std": 13.522940275015657
+      },
+      "topo_level": {
+        "transform": "standardize",
+        "mean": 16.83946760964589,
+        "std": 26.003271021499156
+      },
+      "reverse_topo_level": {
+        "transform": "standardize",
+        "mean": 10.753243946760964,
+        "std": 20.81463564260022
+      }
+    },
+    "categorical": {
+      "operation_type": {
+        "encoding": "integer_index",
+        "categories": [
+          "balanced",
+          "compute_bound",
+          "memory_bound"
+        ],
+        "mapping": {
+          "balanced": 0,
+          "compute_bound": 1,
+          "memory_bound": 2
+        },
+        "num_categories": 3
+      },
+      "criticality": {
+        "encoding": "integer_index",
+        "categories": [
+          "HI",
+          "LO"
+        ],
+        "mapping": {
+          "HI": 0,
+          "LO": 1
+        },
+        "num_categories": 2
+      }
+    }
+  },
+  "edge": {
+    "log1p_standardized": {
+      "data_bytes": {
+        "transform": "log1p_standardize",
+        "mean": 17.47583267919085,
+        "std": 1.1957323672810944
+      }
+    }
+  },
+  "context": {
+    "categorical": {
+      "core_type": {
+        "encoding": "integer_index",
+        "categories": [
+          "big",
+          "little"
+        ],
+        "mapping": {
+          "big": 0,
+          "little": 1
+        },
+        "num_categories": 2
+      }
+    },
+    "dvfs_standardized": {
+      "frequency_ghz": {
+        "transform": "standardize",
+        "mean": 1.3247083333333334,
+        "std": 0.4821870790639976
+      },
+      "voltage_v": {
+        "transform": "standardize",
+        "mean": 0.9599392857142858,
+        "std": 0.10513821347551576
+      }
+    },
+    "z_t_standardized": {
+      "cpu_utilization": {
+        "transform": "standardize",
+        "mean": 0.5298034237322825,
+        "std": 0.17318986272801484
+      },
+      "ready_queue_length": {
+        "transform": "standardize",
+        "mean": 2.964642857142857,
+        "std": 2.0421014773701995
+      },
+      "active_core_count": {
+        "transform": "standardize",
+        "mean": 2.504047619047619,
+        "std": 0.8159031207774187
+      },
+      "memory_active_tasks": {
+        "transform": "standardize",
+        "mean": 1.950952380952381,
+        "std": 0.9675565924725996
+      },
+      "bus_utilization": {
+        "transform": "standardize",
+        "mean": 0.4805792530986594,
+        "std": 0.17112002607096194
+      },
+      "thermal_pressure": {
+        "transform": "standardize",
+        "mean": 0.40009639953658516,
+        "std": 0.1622026502578976
+      },
+      "release_jitter_us": {
+        "transform": "standardize",
+        "mean": 79.39883347249209,
+        "std": 63.10030865449097
+      }
+    }
+  },
+  "target": {
+    "y_exec_us": {
+      "transform": "standardize",
+      "mean": 272333.4505456463,
+      "std": 204295.0653832185
+    }
+  },
+  "training_statistics": {
+    "num_training_records": 16800,
+    "num_training_graphs": 400,
+    "num_training_nodes": 101805,
+    "num_training_edges": 716443
+  }
+}

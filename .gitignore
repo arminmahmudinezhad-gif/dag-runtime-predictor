@@ -1,0 +1,24 @@
+__pycache__/
+*.pyc
+.DS_Store
+__MACOSX/
+.claude/
+.ipynb_checkpoints/
+*.egg-info/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.pytest_cache/
+.mypy_cache/
+build/
+dist/
+*.log
+
+# Generated dataset: retain only its documentation.
+data/**
+!data/README.md
+
+# Keep the selected best checkpoint; ignore the redundant final-epoch copy.
+models/**/last_model.pt

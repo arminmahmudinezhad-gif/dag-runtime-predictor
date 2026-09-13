@@ -1,0 +1,6 @@
+{
+  "base_quantile": "Q95",
+  "delta_hi": 0.01,
+  "delta_lo": 0.05,
+  "enforce_lo_le_hi": true
+}

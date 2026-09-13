@@ -1,0 +1,27 @@
+{
+  "quantiles": [
+    0.5,
+    0.9,
+    0.95,
+    0.99
+  ],
+  "hidden_dim": 128,
+  "num_gnn_layers": 3,
+  "attention_hidden_dim": 64,
+  "head_hidden_dim": 128,
+  "dropout": 0.1,
+  "learning_rate": 0.001,
+  "weight_decay": 1e-05,
+  "max_epochs": 200,
+  "early_stopping_patience": 25,
+  "gradient_clip_norm": 1.0,
+  "seed": 20260807,
+  "num_quantiles": 4,
+  "node_input_dim": 9,
+  "edge_input_dim": 1,
+  "context_input_dim": 10,
+  "numerical_context_dim": 9,
+  "core_type_num_categories": 2,
+  "operation_type_num_categories": 3,
+  "criticality_num_categories": 2
+}

@@ -1,0 +1,26 @@
+{
+  "HI": {
+    "criticality": "HI",
+    "base_quantile": "Q95",
+    "delta": 0.01,
+    "n_calibration": 1050,
+    "k_index": 1041,
+    "q_conf_us": 15665.78125,
+    "fraction_zero_scores": 0.98,
+    "score_mean_us": 2512.9153422619047,
+    "score_median_us": 0.0,
+    "score_max_us": 470777.5
+  },
+  "LO": {
+    "criticality": "LO",
+    "base_quantile": "Q95",
+    "delta": 0.05,
+    "n_calibration": 1050,
+    "k_index": 999,
+    "q_conf_us": 0.0,
+    "fraction_zero_scores": 0.9885714285714285,
+    "score_mean_us": 70.89828869047619,
+    "score_median_us": 0.0,
+    "score_max_us": 17105.1875
+  }
+}

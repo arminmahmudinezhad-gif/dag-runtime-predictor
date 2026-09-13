@@ -1,0 +1,14 @@
+{
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 1e-05,
+  "use_lr_scheduler": true,
+  "lr_scheduler": "ReduceLROnPlateau",
+  "lr_scheduler_factor": 0.5,
+  "lr_scheduler_patience": 8,
+  "lr_scheduler_min_lr": 1e-06,
+  "early_stopping_patience": 25,
+  "gradient_clip_norm": 1.0,
+  "max_epochs": 200,
+  "seed": 20260807
+}

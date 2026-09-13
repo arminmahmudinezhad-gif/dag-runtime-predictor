@@ -1,0 +1,3 @@
+metric,corr_with_embedding_norm,corr_with_embedding_dist_from_graph_mean
+pinball_q95,-0.3530074136508227,0.25619109743806
+abs_error_q50,-0.3308580369751512,0.20392067791777918

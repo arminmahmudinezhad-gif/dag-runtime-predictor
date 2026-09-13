@@ -1,0 +1,71 @@
+{
+  "version": "phase1_feature_contract_v1",
+  "ordered_node_features": [
+    "compute_cycles",
+    "memory_bytes",
+    "input_size_bytes",
+    "in_degree",
+    "out_degree",
+    "operation_type",
+    "criticality",
+    "topo_level",
+    "reverse_topo_level"
+  ],
+  "ordered_edge_features": [
+    "data_bytes"
+  ],
+  "ordered_context_features": [
+    "core_type",
+    "frequency_ghz",
+    "voltage_v",
+    "cpu_utilization",
+    "ready_queue_length",
+    "active_core_count",
+    "memory_active_tasks",
+    "bus_utilization",
+    "thermal_pressure",
+    "release_jitter_us"
+  ],
+  "categorical_vocabularies": {
+    "operation_type": {
+      "categories": [
+        "balanced",
+        "compute_bound",
+        "memory_bound"
+      ],
+      "mapping": {
+        "balanced": 0,
+        "compute_bound": 1,
+        "memory_bound": 2
+      }
+    },
+    "criticality": {
+      "categories": [
+        "HI",
+        "LO"
+      ],
+      "mapping": {
+        "HI": 0,
+        "LO": 1
+      }
+    },
+    "core_type": {
+      "categories": [
+        "big",
+        "little"
+      ],
+      "mapping": {
+        "big": 0,
+        "little": 1
+      }
+    }
+  },
+  "target": {
+    "name": "y_exec_us",
+    "transformation": "standardize",
+    "forward_description": "y_scaled = (y_exec_us - train_mean) / train_std",
+    "inverse_description": "y_exec_us = y_scaled * train_std + train_mean",
+    "statistics_source": "training split only"
+  },
+  "preprocessing_state_file": "preprocessing_state.json"
+}

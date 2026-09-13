@@ -1,0 +1,13 @@
+numpy>=1.24
+pandas>=2.0
+torch>=2.2
+torch-geometric>=2.5
+matplotlib>=3.7
+jupyterlab>=4.0
+
+# report export (scripts/export_report_pdf.py) — optional, only needed to regenerate PHASE2_REPORT.pdf
+reportlab>=4.0
+markdown>=3.4
+beautifulsoup4>=4.12
+arabic-reshaper>=3.0
+python-bidi>=0.4
